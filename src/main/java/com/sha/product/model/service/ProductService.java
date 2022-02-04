@@ -4,6 +4,7 @@ import com.sha.product.model.entity.Product;
 import com.sha.product.util.Util;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,6 +34,7 @@ public class ProductService extends AbstractProductService
     {
         try
         {
+            entity.setCreated(new Date());
             return productRepository.save(entity);
         }
         catch (IllegalArgumentException e)
